@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Dots and Boxes: can you master it?">
+    <meta name="author" content="Diogo Martins & Ana Sofia Cepeda Germano">
+
+    <title>Dots and Boxes</title>
+    <link href="style.css" rel="stylesheet"/>
+
+<body onload="ranking()">
+<div class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"> Dots and Boxes</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="nav_bar_login" onclick="set_tab('login')">Login</a></li>
+                <li><a href="#" onclick="set_tab('game')">Play</a></li>
+                <li><a href="#" onclick="highs()">Highscores</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!--END NAV SECTION -->
+
+<!--HOME SECTION-->
+
+<div id="home-sec">
+    <div id="login">
+        <div class="login_box">
+            Username <br>
+            <input id="username" type="text">
+            <br>
+            <br>
+            Password<br>
+            <input id="password" type="password">
+            <br>
+            <br>
+            <button id="register" onclick="validate_register()">Register</button>
+            &nbsp
+            <button id="submit" onclick="validate_login()">Login</button>
+        </div>
+    </div>
+    <div id="mode">
+        <form action="set_difficulty">
+            <input type="radio" name="difficulty" id="beginner">beginner<br>
+            <input type="radio" name="difficulty" id="intermediate">intermediate<br>
+            <input type="radio" name="difficulty" id="advanced">advanced<br>
+            <input type="radio" name="difficulty" id="expert">expert<br>
+            <button type="button" value="Play Online" onclick="multiplayer_play()">Play Online</button>
+            <button type="button" value="Play Offline" onclick="play()">Play Offline</button>
+        </form>
+    </div>
+
+    <div id="game">
+
+        <div class="pontos_player">
+            <p>You:</p>
+        </div><div id="pontos_player1"> 0</div>
+        <div class="pontos_player_CPU">
+            <p>Opponent:</p>
+        </div><div id="pontos_player_CPU1">0 </div>
+        <div id="restart">
+            <button type="button" id="restart_button" onclick="leave()">Forfeit</button>
+        </div>
+    </div>
+
+
+    <div id="highscores">
+        <div id="play_again">
+            <button type="button" onclick="set_tab('mode')">Play again</button>
+        </div>
+    </div>
+
+    <div id="wait">
+        À procura de outro jogador.<br>
+        Por favor aguarde...
+    </div>
+</div>
+
+<!--FOOTER SECTION -->
+<div id="footer">
+    Ana Sofia Cepeda Germano<br>
+    up201105083<br>
+
+    Diogo Santos Martins<br>
+    up201008708
+</div>
+<!-- END FOOTER SECTION -->
+
+<!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+<!-- CORE JQUERY  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- CUSTOM SCRIPTS -->
+<script src="script.js"></script>
+<script src="connection.js"></script>
+</body>
+</html>
